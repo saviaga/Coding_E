@@ -1,3 +1,4 @@
+[Discussion Post (created on 8/1/2021 at 11:3)](https://leetcode.com/problems/insert-interval/solution/)  
 <h2>57. Insert Interval</h2><h3>Medium</h3><hr><div><p>Given a set of <em>non-overlapping</em> intervals, insert a new interval into the intervals (merge if necessary).</p>
 
 <p>You may assume that the intervals were initially sorted according to their start times.</p>
