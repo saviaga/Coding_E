@@ -1,11 +1,11 @@
 # Write your MySQL query statement below
 
 with remvd_rep as (
-SELECT  a.action_date, a.post_id as alL_posts,r.post_id as removed_posts 
+    SELECT  a.action_date, a.post_id as alL_posts,r.post_id as removed_posts 
     FROM Actions a
     LEFT JOIN Removals r
     ON a.post_id=r.post_id
-    WHERE a.action = 'report' AND a.extra = 'spam'
+    WHERE a.extra = 'spam'
     
 ), 
 removed_by_all_per_day as (
