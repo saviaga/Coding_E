@@ -7,16 +7,18 @@ class Solution:
         
         filter_s = filter(lambda ch: ch.isalnum(), s)
         filter_s = list(filter_s)
-        filter_lower = [ch.lower() for ch in filter_s]
+        sentence = [ch.lower() for ch in filter_s]
         
-        start= 0
-        end = len(filter_lower)-1
-        
-        while start <=end:
-            if filter_lower[start]!=filter_lower[end]:
+        start = 0
+        end = len(sentence)-1
+        print(sentence)
+        while start<=end:
+            
+            if sentence[start]!=sentence[end]:
                 return False
-            else:
-                start+=1
-                end-=1
+            start+=1
+            end-=1
+            
         return True
+        
         
