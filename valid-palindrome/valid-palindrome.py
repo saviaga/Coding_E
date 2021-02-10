@@ -11,14 +11,13 @@ class Solution:
         
         start = 0
         end = len(sentence)-1
-        print(sentence)
-        while start<=end:
-            
+        while start <= end:
             if sentence[start]!=sentence[end]:
-                return False
+                    return False
             start+=1
             end-=1
-            
+        
         return True
+        
         
         
