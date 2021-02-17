@@ -1,24 +1,27 @@
-class Solution(object):
-    def findJudge(self, N, trust):
-        """
-        :type N: int
-        :type trust: List[List[int]]
-        :rtype: int
-        """
-        if len(trust) < N - 1:
-            return -1
+class Solution:
+    def findJudge(self, N: int, trust: List[List[int]]) -> int:
         
-        in_degrees = [0]* (N+1)
-        out_degrees = [0]*(N+1)
-        #save out and in degrees
-        for relationship in trust:
+        outdegree = [0]*(N+1)
+        indegree = [0]*(N+1)
+        
+        for elem in trust:
+            outdegree[elem[0]]+=1
+            indegree[elem[1]]+=1
             
-            out_degrees[relationship[0]] += 1
-            in_degrees[relationship[1]] += 1
-        #there is no person 0
         for i in range(1,N+1):
-            if in_degrees[i] == N-1 and out_degrees[i]==0:
+            if outdegree[i]==0 and indegree[i]==N-1:
                 return i
-        return -1
+        else:
+            return -1
+            
         
+        
+        
+        
+        
+            
                 
+            
+        
+            
+            
