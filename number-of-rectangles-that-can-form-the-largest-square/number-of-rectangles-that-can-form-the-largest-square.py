@@ -1,16 +1,17 @@
-class Solution(object):
-    def countGoodRectangles(self, rectangles):
-        """
-        :type rectangles: List[List[int]]
-        :rtype: int
-        """
-        count = 0
-        for i in range(len(rectangles)):
-            rectangles[i] = min(rectangles[i][0],rectangles[i][1])
-        max_elem = max(rectangles)        
-        for elem in rectangles:
-            if elem >= max_elem:
-                count+=1
-        return count
-            
+class Solution:
+    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
+        
+        maxLen = min(rectangles[0]) #get max leng of first rectangle
+        num_rectanges = collections.defaultdict(int)
+        num_rectanges[maxLen] = 1
+        
+        for elem in rectangles[1:]:
+            lenght = min(elem)
+            if lenght >=maxLen:
+                maxLen = lenght
+                num_rectanges[maxLen]+=1
+        return num_rectanges[maxLen]
+                
+        
+        
         
