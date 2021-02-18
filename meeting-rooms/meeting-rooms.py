@@ -4,13 +4,20 @@ class Solution(object):
         :type intervals: List[List[int]]
         :rtype: bool
         """
-        intervals.sort(key=lambda intervals:intervals[0])
-        for i in range(len(intervals)-1):
-            if intervals[i][1]> intervals[i+1][0]:
+        if not intervals:
+            return True
+        
+        intervals.sort()
+        first_meeting_end = intervals[0][1]
+        
+        for elem in intervals[1:]:
+            
+            next_meeting_start = elem[0]
+            if first_meeting_end > next_meeting_start:
                 return False
+            else:
+                first_meeting_end = elem[1]
         return True
             
             
-        
-        
         
