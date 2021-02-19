@@ -1,16 +1,21 @@
-class Solution(object):
-    def fib(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+class Solution:
+    def fib(self, n: int) -> int:
         
-       
+        
+        dict_nums = {0:0,1:1}
+        
+        
+        def fibHelper(n):
+        
+            if n in dict_nums:
+                return dict_nums[n]
             
-        fibo = {0:0,1:1}
-
-        if n not in fibo:          
-                fibo[n] = self.fib(n-1) + self.fib(n-2)            
-        return fibo[n]
+            dict_nums[n] = fibHelper(n-1) + fibHelper(n-2)
+            
+            return dict_nums[n]
+            
+        return fibHelper(n)
+        
+        
         
         
