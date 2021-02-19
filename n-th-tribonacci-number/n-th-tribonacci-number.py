@@ -1,24 +1,14 @@
-class Solution(object):
-    def tribonacci(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+class Solution:
+    def tribonacci(self, n: int) -> int:
         
-        
-        def tribhelper(k):
+        def tribonaccihelper(n):
             
-        
-        
-            if k in fibo:
-                return fibo[k]
-                      
-            fibo[k] = tribhelper(k-1) + tribhelper(k-2) + tribhelper(k-3)  
-            return fibo[k]
-
-        fibo = {0:0,1:1,2:1}
-        return tribhelper(n)
-    
-    
-          
+            if n in dict_nums:
+                return dict_nums[n]
+            
+            dict_nums[n] = tribonaccihelper(n-1) + tribonaccihelper(n-2) + tribonaccihelper(n-3)
+            return dict_nums[n]
+            
+        dict_nums = {0:0,1:1,2:1}
+        return tribonaccihelper(n)
         
