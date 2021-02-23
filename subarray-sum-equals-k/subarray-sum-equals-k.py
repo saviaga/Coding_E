@@ -1,23 +1,18 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         
-        dict_comp = {0:1}
-        total_sum = 0
-        count=0
-        
+        cs = 0
+        count =0 
+        dict_sum = {0:1}
         for elem in nums:
-            total_sum+=elem
-            complement = total_sum - k
-            if complement in dict_comp:
-                count+= dict_comp[complement]
+            cs +=elem
+            if cs - k in dict_sum:
+                count+=dict_sum[cs-k]
             
-            if total_sum in dict_comp:
-                dict_comp[total_sum]+=1
+            if cs in dict_sum:
+                dict_sum[cs]+=1
             else:
-                dict_comp[total_sum]=1
-       
+                dict_sum[cs]=1
         return count
-                
-            
-            
+                    
         
