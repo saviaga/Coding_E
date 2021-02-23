@@ -4,18 +4,21 @@ class Solution:
         
         count = 0
         cs = 0
-        dict_elem = {0:1}
+        dict_sum = {}
         
         for i in range(len(nums)):
-            cs+=nums[i]
-            if cs-k in dict_elem:
-                count+=dict_elem[cs-k]
+           
+            cs += nums[i];
+            if cs == k:
+                count+=1
+            if (cs - k) in dict_sum: 
+                count += dict_sum[cs - k]
             
-            if cs in dict_elem:
-                dict_elem[cs]+=1
+            if cs in dict_sum:
+                dict_sum[cs]+=1
             else:
-                dict_elem[cs]=1
-        print(dict_elem)
+                dict_sum[cs]=1
+       
         return count
             
             
