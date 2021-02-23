@@ -1,3 +1,4 @@
+[Discussion Post (created on 23/1/2021 at 17:0)](https://leetcode.com/problems/partition-equal-subset-sum/submissions/)  
 <h2>416. Partition Equal Subset Sum</h2><h3>Medium</h3><hr><div><p>Given a <b>non-empty</b> array <code>nums</code> containing <b>only positive integers</b>, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p>
 
 <p>&nbsp;</p>
