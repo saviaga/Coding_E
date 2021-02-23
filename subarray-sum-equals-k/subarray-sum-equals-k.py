@@ -15,6 +15,7 @@ class Solution:
                 dict_elem[cs]+=1
             else:
                 dict_elem[cs]=1
+        print(dict_elem)
         return count
             
             
