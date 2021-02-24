@@ -7,17 +7,14 @@ class Solution(object):
         if not intervals:
             return True
         
-        intervals.sort()
-        first_meeting_end = intervals[0][1]
+        intervals.sort(key= lambda x: x[0])
         
-        for elem in intervals[1:]:
-            
-            next_meeting_start = elem[0]
-            if first_meeting_end > next_meeting_start:
+        
+        for i in range(len(intervals)-1):
+            first_end = intervals[i][1]
+            next_start = intervals[i+1][0]
+            if first_end> next_start:
                 return False
-            else:
-                first_meeting_end = elem[1]
         return True
-            
             
         
