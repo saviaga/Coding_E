@@ -1,3 +1,4 @@
+[Discussion Post (created on 25/1/2021 at 14:19)](https://leetcode.com/problems/subarray-sum-equals-k/submissions/)  
 [Discussion Post (created on 19/1/2021 at 19:11)](https://leetcode.com/problems/subarray-sum-equals-k/submissions/)  
 [Discussion Post (created on 19/1/2021 at 19:5)](https://leetcode.com/problems/subarray-sum-equals-k/submissions/)  
 <h2>560. Subarray Sum Equals K</h2><h3>Medium</h3><hr><div><p>Given an array of integers <code>nums</code> and an integer <code>k</code>, return <em>the total number of continuous subarrays whose sum equals to <code>k</code></em>.</p>
