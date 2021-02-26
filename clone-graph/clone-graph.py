@@ -8,32 +8,23 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        if not node:
-            return node
+        
+        if node is None:
+            return
         
         stack = [node]
-        n = []
-        seen = {node: Node(node.val)} #original -> clone mapping
-        
+        clone = {}
+     
+
         while stack:
-            current = stack.pop()  
-           
-            for nei in current.neighbors: 
-                    if nei not in seen: 
-                        seen[nei] = Node(nei.val)
-                        stack.append(nei)
-                    seen[current].neighbors.append(seen[nei])
-        return seen[node] 
+            current = stack.pop()
+            if current not in clone:
+                
+                clone[current] = Node(current.val)
+            for neigh in current.neighbors: 
+                if not neigh in clone:
+                    clone[neigh] = Node(neigh.val)
+                    stack.append(neigh)
+                clone[current].neighbors.append(clone[neigh])        
+        return clone[node]
     
-    
-             
-
-
-
-            
-                
-                
-                
-            
-            
-        
