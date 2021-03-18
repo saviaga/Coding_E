@@ -2,16 +2,16 @@ import numpy as np
 class Solution:
     def findPairs(self, nums: List[int], k: int) -> int:
         
-        count = 0
-        dict_items = collections.Counter(nums)
+        counter = 0
+        elements = collections.Counter(nums)
         
-        for key in dict_items:
-            if k > 0 and key+k in dict_items:
-                count+=1
-            elif k ==0 and dict_items[key] > 1:
-                count+=1
-        return count
-            
+        for key,value in elements.items():
+            if k > 0 and key+k in elements:
+                counter+=1
+            elif k ==0 and key+k in elements:
+                if elements[key+k] > 1:
+                    counter+=1
+        return counter
         
          
         
