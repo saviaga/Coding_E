@@ -4,8 +4,8 @@ class Solution:
         min_size = float('inf')
         window_sum = 0
         for end in range(len(nums)):
-            right_num = nums[end]
-            window_sum += right_num
+
+            window_sum += nums[end]
             while window_sum >= target:
                 window_size = end-start+1       
                 min_size = min(min_size,window_size)
