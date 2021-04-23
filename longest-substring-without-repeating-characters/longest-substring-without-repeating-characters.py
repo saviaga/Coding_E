@@ -1,22 +1,18 @@
 class Solution:
-    def lengthOfLongestSubstring(self, str1: str) -> int:
-          window_start = 0
-          max_length = 0
-          char_index_map = {}
+    def lengthOfLongestSubstring(self, nums: str) -> int:
+        dict_char = {}
+        max_lenght = 0
+        start = 0
+        window_size = 0
+        for end in range(len(nums)):
+            right_num = nums[end]
+            if right_num  in dict_char:
+                start = max(start,dict_char[right_num]+1)
+            dict_char[right_num] = end
+            max_lenght = max(max_lenght,end-start+1)
 
-          # try to extend the range [windowStart, windowEnd]
-          for window_end in range(len(str1)):
-            right_char = str1[window_end]
-            # if the map already contains the 'right_char', shrink the window from the beginning so that
-            # we have only one occurrence of 'right_char'
-            if right_char in char_index_map:
-              # this is tricky; in the current window, we will not have any 'right_char' after its previous index
-              # and if 'window_start' is already ahead of the last index of 'right_char', we'll keep 'window_start'
-              window_start = max(window_start, char_index_map[right_char] + 1)
-            # insert the 'right_char' into the map
-            char_index_map[right_char] = window_end
-            # remember the maximum length so far
-            max_length = max(max_length, window_end - window_start + 1)
-          return max_length
-       
+        return max_lenght
+                
+            
+            
         
