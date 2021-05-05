@@ -1,19 +1,23 @@
 class Solution:
-    def sortedSquares(self, arr: List[int]) -> List[int]:
-        squares = [0]*len(arr)
-        highest_index = len(arr)-1
-          # TODO: Write your code here
-        left = 0
-        right = len(arr)-1
-        while left <= right:
-            sq1 = arr[left]**2
-            sq2 = arr[right]**2
-            if sq1 > sq2:
-                squares[highest_index] = sq1
-                left+=1
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        squares = [0]*len(nums)
+        pt = len(squares)-1
+        start = 0
+        end = len(squares)-1
+        
+        
+        while start <= end:
+            sq_start = nums[start]**2
+            sq_end = nums[end]**2
+            if sq_start <= sq_end:
+                squares[pt] = sq_end
+                end-=1
             else:
-                squares[highest_index] = sq2
-                right-=1
-            highest_index -=1
+                squares[pt] = sq_start
+                start+=1
+            pt-=1
+            
         return squares
+        
+    
         
